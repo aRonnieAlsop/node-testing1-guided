@@ -5,8 +5,8 @@ class Car {
         this.model = model
         this.odometer = 0
     }
-    drive(distance) {
-        const total = distance.reuce((acc, leg) => acc + leg)
+    drive(...legs) {
+        const total = legs.reduce((acc, leg) => acc + leg)
         this.odometer += total
         return total
     }

@@ -50,6 +50,16 @@ describe('Car class', () => {
     expect(prius.drive).toBe(Car.prototype.drive)
    })
    it('drive returns the driven distance', () => {
-   
+    expect(prius.drive(5)).toBe(5)
+    expect(prius.drive(0)).toBe(0)
+    expect(prius.drive(10)).toBe(10)
+   })
+   it('drive increases the odometer by the driven distance', () => {
+    prius.drive(5)
+    expect(prius.odometer).toBe(5)
+    prius.drive(6)
+    expect(prius.odometer).toBe(11)
+    prius.drive(9)
+    expect(prius.odometer).toBe(20)
    })
 })
