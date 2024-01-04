@@ -10,6 +10,14 @@ class Car {
         this.odometer += total
         return total
     }
+    driveAsync(distance) {
+        return new Promise(resolve => {
+            setTimeout(() => {
+                this.odometer += distance 
+                resolve(distance)
+            }, 0)
+        })
+    }
 }
 
 module.exports = Car
